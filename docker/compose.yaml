@@ -24,7 +24,7 @@ services:
     command: '--auth nayukidayo'
   pub:
     restart: always
-    image: nayukidayo/tjg-go:0.0.1
+    image: nayukidayo/tjg-go:latest
     logging:
       driver: local
     environment:
@@ -40,7 +40,7 @@ services:
       - nats
   sub:
     restart: always
-    image: nayukidayo/tjg-go:0.0.1
+    image: nayukidayo/tjg-go:latest
     logging:
       driver: local
     environment:
