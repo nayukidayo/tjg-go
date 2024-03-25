@@ -23,7 +23,7 @@ jobs:
         run: npm --prefix=./ui ci && npm --prefix=./ui run build
 
       - name: Set up Go
-      - uses: actions/setup-go@v5
+        uses: actions/setup-go@v5
         with:
           go-version: 'stable'
 
