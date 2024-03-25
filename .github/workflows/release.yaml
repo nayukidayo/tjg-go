@@ -29,7 +29,9 @@ jobs:
           go-version: stable
 
       - name: Build Go
-        run: go build -o bin ./cmd/...
+        run: |
+          export CGO_ENABLED=0
+          go build -o bin ./cmd/...
 
       - name: Docker Hub
         uses: docker/login-action@v3
