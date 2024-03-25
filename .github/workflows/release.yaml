@@ -14,21 +14,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
 
-      - name: Build UI
-        run: npm --prefix=./ui ci && npm --prefix=./ui run build
+      # - name: Build UI
+      #   run: npm --prefix=./ui ci && npm --prefix=./ui run build
 
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 'stable'
+          go-version: stable
 
       - name: Build Go
-        run: go build -o bin cmd/... && ls -lAh . && ls -lAh bin
+        run: go build cmd/... && ls -lAh . && ls -lAh bin
       
       # - name: Docker Hub
       #   uses: docker/login-action@v3
